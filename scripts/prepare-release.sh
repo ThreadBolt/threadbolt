@@ -1,36 +1,3 @@
-# #!/bin/bash
-# set -e
-
-# VERSION=$1
-# if [ -z "$VERSION" ]; then
-#     echo "Usage: $0 <version>"
-#     exit 1
-# fi
-
-# echo "🚀 Preparing release $VERSION"
-
-
-# # Update version in code
-# sed -i "s/version = \".*\"/version = \"$VERSION\"/" pkg/framework/version.go
-
-# # Update CHANGELOG
-# echo "## [$VERSION] - $(date +%Y-%m-%d)" > CHANGELOG.tmp
-# echo "" >> CHANGELOG.tmp
-# echo "### Added" >> CHANGELOG.tmp
-# echo "### Changed" >> CHANGELOG.tmp
-# echo "### Fixed" >> CHANGELOG.tmp
-# echo "" >> CHANGELOG.tmp
-# cat CHANGELOG.md >> CHANGELOG.tmp
-# mv CHANGELOG.tmp CHANGELOG.md
-
-# # Build for multiple platforms
-# GOOS=linux GOARCH=amd64 go build -o dist/threadbolt-linux-amd64 cmd/threadbolt/main.go
-# GOOS=darwin GOARCH=amd64 go build -o dist/threadbolt-darwin-amd64 cmd/threadbolt/main.go
-# GOOS=windows GOARCH=amd64 go build -o dist/threadbolt-windows-amd64.exe cmd/threadbolt/main.go
-
-# echo "✅ Release $VERSION prepared"
-# echo "📝 Don't forget to update CHANGELOG.md with release notes"
-
 #!/usr/bin/env bash
 set -euo pipefail
 

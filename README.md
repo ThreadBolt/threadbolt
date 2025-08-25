@@ -26,7 +26,7 @@ ThreadBolt is a convention-over-configuration web framework for Go, inspired by 
 ### Install ThreadBolt CLI
 
 ```bash
-go install github.com/ThreadBolt/threadbolt/cmd/threadbolt@latest
+go install github.com/ThreadBolt/threadbolt/cmd/threadbolt@v1.2.0
 ```
 
 Verify installation:
@@ -695,10 +695,8 @@ ThreadBolt is released under the MIT License. See [LICENSE](LICENSE) for details
 
 ## 🆘 Support
 
-- **Documentation**: [https://threadbolt.dev](https://threadbolt.dev)
 - **Issues**: [GitHub Issues](https://github.com/ThreadBolt/threadbolt/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/ThreadBolt/threadbolt/discussions)
-- **Discord**: [Join our community](https://discord.gg/threadbolt)
 
 ---
 
