@@ -161,24 +161,24 @@ func setupTestStructure() {
 #!/bin/bash
 set -e
 
-echo "🧪 Running SpringGo Integration Tests"
+echo "🧪 Running ThreadBolt Integration Tests"
 
 # Build CLI
-go build -o bin/springgo cmd/springgo/main.go
+go build -o bin/threadbolt cmd/threadbolt/main.go
 
 # Test project creation
 echo "📁 Testing project creation..."
 rm -rf test-integration-app
-./bin/springgo new test-integration-app
+./bin/threadbolt new test-integration-app
 cd test-integration-app
 
 # Test model generation
 echo "🏗️ Testing model generation..."
-../bin/springgo generate model TestUser
+../bin/threadbolt generate model TestUser
 
 # Test controller generation  
 echo "🎮 Testing controller generation..."
-../bin/springgo generate controller TestUser
+../bin/threadbolt generate controller TestUser
 
 # Test build
 echo "🔨 Testing build..."
@@ -335,9 +335,9 @@ cat CHANGELOG.md >> CHANGELOG.tmp
 mv CHANGELOG.tmp CHANGELOG.md
 
 # Build for multiple platforms
-GOOS=linux GOARCH=amd64 go build -o dist/springgo-linux-amd64 cmd/springgo/main.go
-GOOS=darwin GOARCH=amd64 go build -o dist/springgo-darwin-amd64 cmd/springgo/main.go
-GOOS=windows GOARCH=amd64 go build -o dist/springgo-windows-amd64.exe cmd/springgo/main.go
+GOOS=linux GOARCH=amd64 go build -o dist/threadbolt-linux-amd64 cmd/threadbolt/main.go
+GOOS=darwin GOARCH=amd64 go build -o dist/threadbolt-darwin-amd64 cmd/threadbolt/main.go
+GOOS=windows GOARCH=amd64 go build -o dist/threadbolt-windows-amd64.exe cmd/threadbolt/main.go
 
 echo "✅ Release $VERSION prepared"
 echo "📝 Don't forget to update CHANGELOG.md with release notes"
@@ -505,14 +505,14 @@ git push origin main
 
 ### Go Module Publishing
 
-SpringGo is published as a Go module. After tagging:
+ThreadBolt is published as a Go module. After tagging:
 
 ```bash
 # Verify module can be downloaded
-go list -m github.com/yourusername/springgo@v1.2.0
+go list -m github.com/ThreadBolt/threadbolt@v1.2.0
 
 # Test installation
-go install github.com/yourusername/springgo/cmd/springgo@v1.2.0
+go install github.com/ThreadBolt/threadbolt/cmd/threadbolt@v1.2.0
 ```
 
 ### Distribution
@@ -596,8 +596,8 @@ ENTRYPOINT ["threadbolt"]
 Enable debug mode for verbose logging:
 
 ```bash
-export SPRINGGO_DEBUG=true
-springgo run
+export THREADBOLT_DEBUG=true
+threadbolt run
 ```
 
 ### Common Issues
@@ -639,10 +639,10 @@ func testDatabaseConnection(db *gorm.DB) error {
 
 ```bash
 # Build with profiling
-go build -o springgo-debug cmd/springgo/main.go
+go build -o threadbolt-debug cmd/threadbolt/main.go
 
 # Run with profiling
-./springgo-debug run --cpuprofile=cpu.prof --memprofile=mem.prof
+./threadbolt-debug run --cpuprofile=cpu.prof --memprofile=mem.prof
 
 # Analyze profiles
 go tool pprof cpu.prof
@@ -713,7 +713,7 @@ go install golang.org/x/tools/cmd/godoc@latest
 # Generate docs
 godoc -http=:6060
 
-# Visit http://localhost:6060/pkg/github.com/yourusername/springgo/
+# Visit http://localhost:6060/pkg/github.com/ThreadBolt/threadbolt/
 ```
 
 ### Example Applications

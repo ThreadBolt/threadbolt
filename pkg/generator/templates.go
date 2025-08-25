@@ -5,7 +5,7 @@ const mainGoTemplate = `package main
 import (
 	"log"
 
-	"github.com/yourusername/springgo/pkg/framework"
+	"github.com/ThreadBolt/threadbolt/pkg/framework"
 )
 
 func main() {
@@ -31,7 +31,7 @@ const goModTemplate = `module {{.AppName}}
 go 1.21
 
 require (
-	github.com/yourusername/springgo v0.1.0
+	github.com/ThreadBolt/threadbolt v0.1.0
 )
 `
 
@@ -195,7 +195,7 @@ Thumbs.db
 
 const readmeTemplate = `# {{.AppName}}
 
-A SpringGo application generated with the SpringGo framework.
+A ThreadBolt application generated with the ThreadBolt framework.
 
 ## Getting Started
 
@@ -250,21 +250,21 @@ A SpringGo application generated with the SpringGo framework.
 
 ### CLI Commands
 
-- ` + "`springgo new <app-name>`" + ` - Create a new SpringGo application
-- ` + "`springgo generate model <name>`" + ` - Generate a new model
-- ` + "`springgo generate controller <name>`" + ` - Generate a new controller
-- ` + "`springgo migrate`" + ` - Run database migrations
-- ` + "`springgo run`" + ` - Start the development server
-- ` + "`springgo test`" + ` - Run tests
+- ` + "`threadbolt new <app-name>`" + ` - Create a new ThreadBolt application
+- ` + "`threadbolt generate model <name>`" + ` - Generate a new model
+- ` + "`threadbolt generate controller <name>`" + ` - Generate a new controller
+- ` + "`threadbolt migrate`" + ` - Run database migrations
+- ` + "`threadbolt run`" + ` - Start the development server
+- ` + "`threadbolt test`" + ` - Run tests
 
 ### Configuration
 
 Configuration is handled through ` + "`config/config.yaml`" + ` and environment variables.
-Environment variables should be prefixed with ` + "`SPRINGGO_`" + `.
+Environment variables should be prefixed with ` + "`THREADBOLT_`" + `.
 
 Example:
-- ` + "`SPRINGGO_SERVER_PORT=3000`" + `
-- ` + "`SPRINGGO_DATABASE_DRIVER=postgres`" + `
+- ` + "`THREADBOLT_SERVER_PORT=3000`" + `
+- ` + "`THREADBOLT_DATABASE_DRIVER=postgres`" + `
 
 ## Development
 

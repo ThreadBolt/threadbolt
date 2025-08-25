@@ -44,7 +44,7 @@ func Initialize(config *viper.Viper) (*gorm.DB, error) {
 	case "sqlite":
 		dsn := config.GetString("database.name")
 		if dsn == "" {
-			dsn = "springgo.db"
+			dsn = "threadbolt.db"
 		}
 		dialector = sqlite.Open(dsn)
 

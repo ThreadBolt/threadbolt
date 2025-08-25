@@ -1,6 +1,6 @@
-# SpringGo Framework
+# ThreadBolt Framework
 
-SpringGo is a convention-over-configuration web framework for Go, inspired by Spring Boot. It provides MVC architecture, built-in ORM support, dependency injection, and powerful CLI tools for rapid development of enterprise-grade web applications and APIs.
+ThreadBolt is a convention-over-configuration web framework for Go, inspired by Spring Boot. It provides MVC architecture, built-in ORM support, dependency injection, and powerful CLI tools for rapid development of enterprise-grade web applications and APIs.
 
 ## 🚀 Features
 
@@ -233,7 +233,7 @@ type CustomController struct {
 
 func (c *CustomController) CustomEndpoint(w http.ResponseWriter, r *http.Request) {
     // Your logic here
-    response := map[string]string{"message": "Hello from SpringGo!"}
+    response := map[string]string{"message": "Hello from threadbolt!"}
     w.Header().Set("Content-Type", "application/json")
     json.NewEncoder(w).Encode(response)
 }
@@ -249,7 +249,7 @@ package routes
 import (
     "your-app/controllers"
     "github.com/gorilla/mux"
-    "github.com/yourusername/springgo/pkg/framework"
+    "github.com/ThreadBolt/threadbolt/pkg/framework"
 )
 
 func SetupRoutes(app *framework.App) {
@@ -562,11 +562,11 @@ go build -ldflags="-s -w" -o myapp main.go
 Set production environment variables:
 
 ```bash
-export SPRINGGO_ENVIRONMENT=production
-export SPRINGGO_DATABASE_DRIVER=postgres
-export SPRINGGO_DATABASE_HOST=prod-db-host
-export SPRINGGO_DATABASE_NAME=myapp_production
-export SPRINGGO_SERVER_PORT=8080
+export THREADBOLT_ENVIRONMENT=production
+export THREADBOLT_DATABASE_DRIVER=postgres
+export THREADBOLT_DATABASE_HOST=prod-db-host
+export THREADBOLT_DATABASE_NAME=myapp_production
+export THREADBOLT_SERVER_PORT=8080
 ```
 
 ### Docker Support
@@ -635,7 +635,7 @@ Here's a complete example of a blog post feature:
 #### 1. Generate the Model
 
 ```bash
-springgo generate model Post
+threadbolt generate model Post
 ```
 
 #### 2. Update the Model (`models/post.go`)
@@ -653,7 +653,7 @@ type Post struct {
 #### 3. Generate the Controller
 
 ```bash
-springgo generate controller Post
+threadbolt generate controller Post
 ```
 
 #### 4. Add Routes (`routes/routes.go`)

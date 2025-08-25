@@ -2,7 +2,6 @@ package config
 
 import (
 	"fmt"
-	"path/filepath"
 
 	"github.com/joho/godotenv"
 	"github.com/spf13/viper"
@@ -22,7 +21,7 @@ func Load() (*viper.Viper, error) {
 
 	// Environment variable settings
 	v.AutomaticEnv()
-	v.SetEnvPrefix("SPRINGGO")
+	v.SetEnvPrefix("THREADBOLT")
 
 	// Default values
 	setDefaults(v)
