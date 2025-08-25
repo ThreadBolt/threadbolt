@@ -1,5 +1,7 @@
 # ThreadBolt Framework
 
+![Version](https://img.shields.io/badge/version-v1.2.0-blue.svg)
+
 ThreadBolt is a convention-over-configuration web framework for Go, inspired by Spring Boot. It provides MVC architecture, built-in ORM support, dependency injection, and powerful CLI tools for rapid development of enterprise-grade web applications and APIs.
 
 ## 🚀 Features
