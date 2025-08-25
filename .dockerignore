@@ -1,0 +1,10 @@
+.git
+.github
+dist/*
+!dist/threadbolt-linux-amd64
+*.md
+go.mod
+go.sum
+scripts/
+pkg/
+cmd/
