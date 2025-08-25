@@ -2,13 +2,12 @@ package generator
 
 import (
 	"fmt"
-	"os"
 	"strings"
 )
 
 func GenerateModel(modelName string) error {
 	fileName := fmt.Sprintf("models/%s.go", strings.ToLower(modelName))
-	
+
 	template := `package models
 
 import (

@@ -3,10 +3,9 @@ package cli
 import (
 	"fmt"
 	"os"
-	"path/filepath"
 
-	"github.com/spf13/cobra"
 	"github.com/ThreadBolt/threadbolt/pkg/generator"
+	"github.com/spf13/cobra"
 )
 
 var newCmd = &cobra.Command{
@@ -15,12 +14,12 @@ var newCmd = &cobra.Command{
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		appName := args[0]
-		
+
 		if err := generator.CreateNewProject(appName); err != nil {
 			fmt.Fprintf(os.Stderr, "Error creating project: %v\n", err)
 			os.Exit(1)
 		}
-		
+
 		fmt.Printf("✅ Successfully created ThreadBolt application: %s\n", appName)
 		fmt.Printf("📁 Navigate to your project: cd %s\n", appName)
 		fmt.Printf("🚀 Run your app: threadbolt run\n")
